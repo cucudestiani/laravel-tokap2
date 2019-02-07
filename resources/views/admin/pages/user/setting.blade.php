@@ -12,25 +12,34 @@
 					{{csrf_field()}}
 					<div class="form-group form-label-group">
 						<input type="text" name="name"
-						class="form-control"
+						class="form-control {{$errors->has('name')?'is-invalid':''}}"
 						value="{{old('name',$dt->name)}}"
 						id="iName" placeholder="Name" required>
-						<label for="iName">Name</label>
+						<label for="iName"></label>
+						@if($errors->has('name'))
+						<div class="invalid-feedback">{{$errors->first('name')}}</div>
+						@endif
 					</div>
 
 					<div class="form-group form-label-group">
 						<input type="text" name="email"
-						class="form-control"
+						class="form-control {{$errors->has('email')?'is-invalid':''}}"
 						value="{{old('email',$dt->email)}}"
 						id="iEmail" placeholder="Email" required>
-						<label for="iEmail">Email</label>
+						<label for="iEmail"></label>
+						@if($errors->has('email'))
+						<div class="invalid-feedback">{{$errors->first('email')}}</div>
+						@endif
 					</div>
 
 					<div class="form-group form-label-group">
 						<input type="password" name="password"
-						class="form-control"
+						class="form-control {{$errors->has('password')?'is-invalid':''}}"
 						id="iPassword" placeholder="password">
 						<label for="iPassword"></label>
+						@if($errors->has('password'))
+						<div class="invalid-feedback">{{$errors->first('password')}}</div>
+						@endif
 						<div class="form-text text muted">
 						<small>Kosongkan password apabila tidak diubah.</small>
 						</div>
@@ -38,9 +47,12 @@
 
 					<div class="form-group form-label-group">
 						<input type="password" name="repassword"
-						class="form-control"
+						class="form-control {{$errors->has('repassword')?'is-invalid':''}}"
 						id="iRePassword" placeholder="Re Password">
 						<label for="iRePassword"></label>
+						@if($errors->has('repassword'))
+						<div class="invalid-feedback">{{$errors->first('repassword')}}</div>
+						@endif
 
 				</div>
 			</div>
