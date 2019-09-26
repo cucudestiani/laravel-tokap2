@@ -14,9 +14,11 @@ class AksesAdmin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $rolel = null)
     {
-        if(Auth::user()->akses == 'admin'){
+        if(Auth::user()->akses == 'asisten' && $rolel == 'asisten'){
+            return $next($request);
+        } else if(Auth::user()->akses == 'admin'){
             return $next($request);
         }
         return abort(404);

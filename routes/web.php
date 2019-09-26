@@ -40,7 +40,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 	
 	/* kategori */
 
-	Route::group(['prefix'=>'kategori','middleware'=>'akses.admin'],function(){
+	Route::group(['prefix'=>'kategori','middleware'=>'akses.admin:asisten'], function(){
 		Route::get('/','KategoriController@daftar')->name('admin.kategori');
 		Route::delete('/','KategoriController@delete');
 		Route::get('/add','KategoriController@add')->name('admin.kategori.add');
@@ -53,7 +53,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 	});
 
 	/* produk */
-	Route::group(['prefix'=>'produk','middleware'=>'akses.admin'], function(){
+	Route::group(['prefix'=>'produk','middleware'=>'akses.admin:asisten'], function(){
 		Route::get('/','ProdukController@daftar')->name('admin.produk');
 		Route::get('/add','ProdukController@add')->name('admin.produk.add');
 		Route::post('/add','ProdukController@save');
