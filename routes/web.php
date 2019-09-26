@@ -55,6 +55,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 	/* produk */
 	Route::group(['prefix'=>'produk','middleware'=>'akses.admin'], function(){
 		Route::get('/','ProdukController@daftar')->name('admin.produk');
+		Route::get('/add','ProdukController@add')->name('admin.produk.add');
+		Route::post('/add','ProdukController@save');
 	});
 });
 

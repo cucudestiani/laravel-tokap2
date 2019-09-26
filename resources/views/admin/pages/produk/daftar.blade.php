@@ -8,7 +8,7 @@
 <div class="row">
 	<!-- tombol tambah -->
 	<div class="col-md-6 mb-3">
-		<a href="#" class="btn btn-primary">[+] Tambah</a>
+		<a href="{{ route('admin.produk.add') }}" class="btn btn-primary">[+] Tambah</a>
 	</div>
 
 
