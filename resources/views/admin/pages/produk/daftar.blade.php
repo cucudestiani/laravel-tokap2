@@ -4,6 +4,14 @@
 <h1>Produk</h1>
 <hr>
 
+@if(session('result')== 'success')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Saved!</strong>Berhasil disimpan.
+	<button type="button" class="close" data-dismiss="alert">
+		&times;
+	</button>
+</div>
+@endif
 <!-- baris tambah dan pencarian -->
 <div class="row">
 	<!-- tombol tambah -->
